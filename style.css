@@ -17,6 +17,10 @@ body {
   padding-bottom: 100px;
 }
 
+a {
+  cursor: pointer;
+}
+
 /* Header */
 header .heading {
   text-align: center;
@@ -38,12 +42,12 @@ header .heading {
   width: 200px;
   height: 50px;
   border-radius: 3px;
-  cursor: default;
+  cursor: pointer;
 }
 
 #thumbnails .course:hover {
-  background-color: #D295BF;
-  color: #454E9E;
+  background-color: #16C172;
+  color: #fff;
 }
 
 /* Details */
@@ -60,27 +64,41 @@ header .heading {
 }
 
 #details {
-  background-color: lightgreen;
   width: 600px;
   margin: 0 auto;
 }
 
-#details-prev {
+.details-link {
   position: absolute;
+}
+
+.details-link:hover {
+  color: #16C172;
+  text-decoration: underline;
+}
+
+#details-prev {
   top: 50px;
   left: 0;
 }
 
 #details-next {
-  position: absolute;
   top: 50px;
   right: 0;
 }
 
 #details-close {
-  position: absolute;
   top: 0;
   right: 0;
+}
+
+#details .details-heading {
+  color: #07CDFF;
+}
+
+#details .school {
+  margin: 0;
+  padding: 0;
 }
 
 #details .degree, #details .ects {
@@ -93,9 +111,19 @@ header .heading {
   font-style: italic;
 }
 
+#details .description {
+  line-height: 1.5em;
+}
+
 /* Footer */
 footer {
   position: absolute;
   bottom: 0;
   width: 1000px;
+  color: #666;
+  line-height: 1em;
+}
+
+footer a {
+  color: inherit;
 }

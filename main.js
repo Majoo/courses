@@ -13,16 +13,16 @@ for(c in courses){
 }
 
 function toggleDetails(){
-  if (this.classList.contains('details-shown')) {
-    hideDetails(this);
+  if ( document.getElementById('details-container').style.display == 'none' ) {
+    showDetails(this.id);
   }
   else {
-    showDetails(this);
+    hideDetails();
   }
 }
 
-function showDetails(element) {
-  let course = getCourse(element.id);
+function showDetails(courseId) {
+  let course = getCourse(courseId);
 
   //Update details with this course's attributes.
   let details = document.getElementById('details');
@@ -31,14 +31,15 @@ function showDetails(element) {
                       '<p class="degree">'+course.degree+'</p>' +
                       '<p class="ects">'+course.ects+' ECTS</p>' +
                       '<p class="description">'+course.description+'</p>';
+  details.setAttribute('data-courseId', course.id);
 
   //Show details
-  document.getElementById('details-container').style.display = 'block';
+  document.getElementById('details-container').style.display = 'flex';
+  document.getElementById('thumbnails').style.display = 'none';
   //Update the clicked item.
-  element.classList.add('details-shown');
 }
 
-function hideDetails(element) {
-  element.classList.remove('details-shown');
-
+function hideDetails() {
+  document.getElementById('details-container').style.display = 'none';
+  document.getElementById('thumbnails').style.display = 'flex';
 }

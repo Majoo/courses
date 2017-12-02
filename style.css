@@ -1,4 +1,7 @@
 /* CSS file */
+html {
+  height: 101%;
+}
 
 body {
   display: grid;
@@ -6,11 +9,12 @@ body {
   grid-row-gap: 50px;
   padding-top: 50px;
 
-  font-family: "Arial", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #333;
   text-align: center;
   max-width: 1000px;
   margin: 0 auto;
+  padding-bottom: 100px;
 }
 
 /* Header */
@@ -27,13 +31,13 @@ header .heading {
 }
 
 #thumbnails .course {
-  background-color: #7E52A0;
+  background-color: #07CDFF;
   color: #fff;
   text-align: center;
   margin: 0.5em;
   width: 200px;
   height: 50px;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: default;
 }
 
@@ -44,35 +48,33 @@ header .heading {
 
 /* Details */
 #details-container {
+  display: none;
   background-color: #fff;
   border-radius: 5px;
   width: 1000px;
-  height: 500px;
   text-align: left;
-
-  position: absolute;
-  z-index: 10;
 }
 
 #details {
   background-color: lightgreen;
-  max-width: 600px;
+  width: 600px;
   margin: 0 auto;
 }
 
-#details-close {
-  background-color: red;
-  float: right;
-}
-
-#details-prev {
-  background-color: blue;
+.details-left {
+  background-color: pink;
+  flex-grow: 1;
   float: left;
 }
 
-#details-next {
-  background-color: blue;
+.details-right {
+  background-color: pink;
+  flex-grow: 1;
   float: right;
+}
+
+#details-close {
+  display: block;
 }
 
 #details .degree, #details .ects {

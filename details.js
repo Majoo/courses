@@ -4,16 +4,28 @@ document.getElementById('details-close').addEventListener('click', close);
 document.getElementById('details-next').addEventListener('click', next);
 document.getElementById('details-prev').addEventListener('click', prev);
 
-/* Functions */
+/* Buttons on details pane */
 function close() {
-  console.log('close');
-  document.getElementById('details-container').style.display = 'none';
+  hideDetails();
 }
 
 function next() {
-  alert('next');
+  let currentCourseId = parseInt( document.getElementById('details').getAttribute('data-courseId') );
+
+  if ( existsCourse(currentCourseId + 1) ) {
+    showDetails( parseInt(currentCourseId) + 1 );
+  } else {
+    showDetails( getFirstCourseId() );
+  }
+
 }
 
 function prev() {
-  alert('prev');
+  let currentCourseId = parseInt( document.getElementById('details').getAttribute('data-courseId') );
+
+  if ( existsCourse(currentCourseId - 1) ) {
+    showDetails( parseInt(currentCourseId) - 1 );
+  } else {
+    showDetails( getLastCourseId() );
+  }
 }

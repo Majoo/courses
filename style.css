@@ -49,6 +49,10 @@ header .heading {
 /* Details */
 #details-container {
   display: none;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+
   background-color: #fff;
   border-radius: 5px;
   width: 1000px;
@@ -61,20 +65,22 @@ header .heading {
   margin: 0 auto;
 }
 
-.details-left {
-  background-color: pink;
-  flex-grow: 1;
-  float: left;
+#details-prev {
+  position: absolute;
+  top: 50px;
+  left: 0;
 }
 
-.details-right {
-  background-color: pink;
-  flex-grow: 1;
-  float: right;
+#details-next {
+  position: absolute;
+  top: 50px;
+  right: 0;
 }
 
 #details-close {
-  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 #details .degree, #details .ects {
@@ -89,4 +95,7 @@ header .heading {
 
 /* Footer */
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 1000px;
 }

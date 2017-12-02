@@ -4,7 +4,7 @@ var thumbnails = document.getElementById('thumbnails');
 
 for(c in courses){
   let thumb = document.createElement('div');
-  thumb.id = courses[c].id;
+  thumb.setAttribute('data-courseId', courses[c].id);
   thumb.className = 'course';
   thumb.innerHTML = '<p class="thumb-heading">'+courses[c].name+'</p>';
 
@@ -13,8 +13,9 @@ for(c in courses){
 }
 
 function toggleDetails(){
-  if ( document.getElementById('details-container').style.display == 'none' ) {
-    showDetails(this.id);
+  if ( !isDetailsShown() ) {
+    let courseId = this.getAttribute('data-courseId');
+    showDetails(courseId);
   }
   else {
     hideDetails();
@@ -36,10 +37,13 @@ function showDetails(courseId) {
   //Show details
   document.getElementById('details-container').style.display = 'flex';
   document.getElementById('thumbnails').style.display = 'none';
-  //Update the clicked item.
 }
 
 function hideDetails() {
   document.getElementById('details-container').style.display = 'none';
   document.getElementById('thumbnails').style.display = 'flex';
+}
+
+function isDetailsShown() {
+  return !(document.getElementById('details-container').style.display == 'none');
 }

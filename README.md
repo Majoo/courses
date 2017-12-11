@@ -1,5 +1,7 @@
 # Courses
 
+http://www.patriciapaulsson.se/courses/courses.html
+
 Site I created to practice my web frontend skills. 
 
 Basically shows the uni courses I have taken. 
